@@ -6,20 +6,38 @@
     <link rel="stylesheet" media="(min-width: 600px) and (max-width: 750px)" href="m.css">
     <link rel="stylesheet" media="(min-width: 475px) and (max-width: 600px)" href="s.css">
     <link rel="stylesheet" media="(max-width: 475px)" href="xs.css">
+    <script defer src="scripts.js"></script>
   </head>
   <body>
-    <header grid>
-      
+    <header flex center>
+      <div grid center id="guide">
+        <span center>Episode</span>
+        <div><img src="people/ashley.png">Ashley</div>
+        <div><img src="people/christophe.png">Christophe</div>
+        <div><img src="people/gonzo.png">Gonzo</div>
+        <div><img src="people/mayacamille.png">Maya-Camille</div>
+      </div>
     </header>
     <vflex mwidth id="episodes">
-      <grid>
+      <h1 center>Season 1</h1>
+      <grid id="barmitzvah">
+        <img cover src="episodes/barmitzvah/cover.png">
+        <grad></grad>
+        <name><t>Brother Birthday Bash</t></name>
+        <img ca src="episodes/barmitzvah/ashley.png">
+        <img ca src="episodes/barmitzvah/christophe.png">
+        <img ca src="episodes/barmitzvah/gonzo.png">
+        <img ca winner src="episodes/barmitzvah/mayacamille.png">
+      </grid>
+      <h1 center>Season 2</h1>
+      <grid id="barmitzvah">
         <img cover src="episodes/barmitzvah/cover.png">
         <grad></grad>
         <name><t>Bar Mitzvah</t></name>
-        <img src="episodes/barmitzvah/ashley.png">
-        <img src="episodes/barmitzvah/christophe.png">
-        <img src="episodes/barmitzvah/gonzo.png">
-        <img winner src="episodes/barmitzvah/mayacamille.png">
+        <img ca src="episodes/barmitzvah/ashley.png">
+        <img ca src="episodes/barmitzvah/christophe.png">
+        <img ca src="episodes/barmitzvah/gonzo.png">
+        <img ca winner src="episodes/barmitzvah/mayacamille.png">
       </grid>
     </vflex>
   </body>
