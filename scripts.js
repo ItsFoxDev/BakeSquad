@@ -1,9 +1,20 @@
-const buttons = document.querySelectorAll("img[ca]");
+var buttons = document.querySelectorAll("img[ca]");
 
-const buttonPressed = e => {
-  console.log(e.target.id);  // Get ID of Clicked Element
+buttons.forEach(function(e){
+  e.setAttribute('onclick', "alert('click')");
+  e.onclick="this.classList.toggle('enlarge')";
+})
+
+function lv(e){
+  viewer=document.getElementById('viewer');
+  vimg=document.getElementById('viewimg');
+  viewer.classList.add('show');
+  setTimeout(function(){viewer.classList.add('enabled')},1);
+  setTimeout(function(){vimg.src=e.src},2);
 }
-
-for (let button of buttons) {
-  button.addEventListener("click", buttonPressed);
+function cv(e){
+  viewer=document.getElementById('viewer');
+  vimg=document.getElementById('viewimg');
+  setTimeout(function(){viewer.classList.remove('enabled')},1);
+  setTimeout(function(){viewer.classList.remove('show')},201);
 }

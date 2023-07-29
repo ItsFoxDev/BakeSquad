@@ -8,7 +8,7 @@
 }
 #episodes grid{
   aspect-ratio:6 / 1;
-  grid-template-columns: 2fr 0px 0px 1fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
   background:black;
   width:100%;
   border-radius:10px;
@@ -23,16 +23,10 @@
   border:none !important;
 }
 #episodes grid grad{
-  width:0px;
-  overflow:visible;
-}
-#episodes grid grad::after{
-  content:"";
   display:block;
-  transform:translate(calc(-100% + 1px));
   height:100%;
   aspect-ratio: 2 / 1;
-  z-index:10;
+  z-index:1;
   background:linear-gradient(90deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,1) 100%);
   border-radius:10px 0px 0px 10px;
 }
@@ -46,14 +40,17 @@
   z-index:1;
   justify-content: center;
 }
-#episodes grid name t{
+#episodes grid name{
   height:100%;
   aspect-ratio:2 / 1;
   display:inline-flex;
   align-items:center;
   font-weight:bold;
-  font-size:35px;
+  box-sizing:border-box;
+  font-size:25px;
   margin-right:10px;
+  z-index:2;
+  padding:10px;
 }
 #episodes grid img{
   width:calc(100% - 14px);
@@ -109,4 +106,53 @@ header > div > div > img{
   border-radius:50%;
   aspect-ratio:1 / 1;
   object-fit:cover;
+}
+#episodes > grid > div{
+  position:relative;
+  aspect-ratio:2 / 1;
+}
+#episodes > grid > div > *{
+  position:absolute;
+  width:100%;
+  height:100%;
+  inset:0px;
+}
+/*.enlarged{
+  transition:all .2s ease;
+  all:unset;
+  transition:all .2s ease;
+  position:fixed;
+  inset:25px;
+  width:calc(100vw - 50px);
+  height:calc(100vh - 50px);
+  z-index:100;
+  scale:1 !important;
+}*/
+#viewer{
+  width:100vw;
+  height:100vh;
+  background:rgba(0,0,0,0.4);
+  position:fixed;
+  inset:0px;
+  z-index:200;
+  backdrop-filter:blur(5px);
+  opacity:0;
+  box-sizing:border-box;
+  display:none;
+}
+#viewer.enabled{
+  opacity:1;
+}
+#viewer.show{
+  display:grid;
+}
+#viewimg{
+  max-width:calc(100vw - 50px);
+  max-height:calc(100vh - 50px);
+  scale:0;
+  border-radius:10px;
+  cursor:pointer;
+}
+#viewer.enabled #viewimg{
+  scale:1;
 }

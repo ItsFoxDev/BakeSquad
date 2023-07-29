@@ -3,7 +3,6 @@
   <head>
     <link rel="stylesheet" href="library.css">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" media="(min-width: 600px) and (max-width: 750px)" href="m.css">
     <link rel="stylesheet" media="(min-width: 475px) and (max-width: 600px)" href="s.css">
     <link rel="stylesheet" media="(max-width: 475px)" href="xs.css">
     <script defer src="scripts.js"></script>
@@ -18,26 +17,44 @@
         <div><img src="people/mayacamille.png">Maya-Camille</div>
       </div>
     </header>
+    <div onclick="cv()" id="viewer" center>
+      <img onclick="cv()" id="viewimg">
+    </div>
     <vflex mwidth id="episodes">
       <h1 center>Season 1</h1>
-      <grid id="barmitzvah">
-        <img cover src="episodes/barmitzvah/cover.png">
-        <grad></grad>
-        <name><t>Brother Birthday Bash</t></name>
-        <img ca src="episodes/barmitzvah/ashley.png">
-        <img ca src="episodes/barmitzvah/christophe.png">
-        <img ca src="episodes/barmitzvah/gonzo.png">
-        <img ca winner src="episodes/barmitzvah/mayacamille.png">
+      <grid id="brobdaybash">
+        <div>
+          <img cover src="episodes/brobdaybash/cover.jpg">
+          <grad></grad>
+          <name>Brother Birthday Bash</name>
+        </div>
+        <img class="enlarged" onclick="lv(this)" src="episodes/brobdaybash/ashley.png">
+        <img onclick="lv(this)" src="episodes/brobdaybash/christophe.png">
+        <img onclick="lv(this)" winner src="episodes/brobdaybash/gonzo.png">
+        <img onclick="lv(this)" src="episodes/brobdaybash/mayacamille.png">
+      </grid>
+      <grid id="rnrwedding">
+        <div>
+          <img cover src="episodes/rnrwedding/cover.jpg">
+          <grad></grad>
+          <name>Rock-n-roll Wedding</name>
+        </div>
+        <img class="enlarged" onclick="lv(this)" src="episodes/rnrwedding/ashley.png">
+        <img onclick="lv(this)" winner src="episodes/rnrwedding/christophe.png">
+        <img onclick="lv(this)" src="episodes/rnrwedding/gonzo.png">
+        <img onclick="lv(this)" src="episodes/rnrwedding/mayacamille.png">
       </grid>
       <h1 center>Season 2</h1>
       <grid id="barmitzvah">
-        <img cover src="episodes/barmitzvah/cover.png">
-        <grad></grad>
-        <name><t>Bar Mitzvah</t></name>
-        <img ca src="episodes/barmitzvah/ashley.png">
-        <img ca src="episodes/barmitzvah/christophe.png">
-        <img ca src="episodes/barmitzvah/gonzo.png">
-        <img ca winner src="episodes/barmitzvah/mayacamille.png">
+        <div>
+          <img cover src="episodes/barmitzvah/cover.png">
+          <grad></grad>
+          <name>Bar Mitzvah</name>
+        </div>
+        <img onclick="lv(this)" src="episodes/barmitzvah/ashley.png">
+        <img onclick="lv(this)" src="episodes/barmitzvah/christophe.png">
+        <img onclick="lv(this)" src="episodes/barmitzvah/gonzo.png">
+        <img onclick="lv(this)" winner src="episodes/barmitzvah/mayacamille.png">
       </grid>
     </vflex>
   </body>
