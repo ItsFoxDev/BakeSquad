@@ -1,0 +1,75 @@
+@import url("https://itsfoxdev.github.io/resources/fonts/gilroy/import.css");
+*{font-family:gilroy;transition:all .2s ease;}
+#episodes{
+  gap:10px;
+  max-width:750px;
+}
+#episodes grid{
+  aspect-ratio:6 / 1;
+  grid-template-columns: 2fr 0px 0px 1fr 1fr 1fr 1fr;
+  background:black;
+  width:100%;
+  border-radius:10px;
+}
+#episodes grid img[cover]{
+  aspect-ratio:2 / 1;
+  margin-right:-100%;
+  border-radius:10px 0px 0px 10px;
+  margin:0px !important;
+  width:100% !important;
+  height:100% !important;
+  border:none !important;
+}
+#episodes grid grad{
+  width:0px;
+  overflow:visible;
+}
+#episodes grid grad::after{
+  content:"";
+  display:block;
+  transform:translate(calc(-100% + 1px));
+  height:100%;
+  aspect-ratio: 2 / 1;
+  z-index:10;
+  background:linear-gradient(90deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,1) 100%);
+  border-radius:10px 0px 0px 10px;
+}
+#episodes grid name{
+  color:white;
+  text-align:right;
+  overflow:visible;
+  display:flex;
+  align-items: flex-end;
+  flex-direction:column;
+  z-index:1;
+  justify-content: center;
+}
+#episodes grid name t{
+  white-space:nowrap;
+  font-weight:bold;
+  font-size:35px;
+  margin-right:10px;
+}
+#episodes grid img{
+  width:calc(100% - 14px);
+  height:calc(100% - 14px);
+  margin:5px;
+  border-radius:10px;
+  border:2px solid transparent;
+  overflow:hidden;
+  object-fit: cover;
+  cursor:pointer;
+}
+#episodes grid img[winner]{
+  border:2px solid var(--yellow);
+  box-shadow:0px 0px 15px 5px #ffd500a1 !important;
+}
+#episodes grid img:hover{
+  scale:1.2;
+}
+header{
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  background:black;
+  height:30px;
+  width:
+}

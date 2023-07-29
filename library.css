@@ -1,0 +1,46 @@
+/* =====[ 🎨 C O L O U R S ]=============== */
+:root{
+  --red: #ff4141;
+  --orange: #ff7a00;
+  --yellow: #ffd600;
+  --green: #2cc74e;
+  --neon: #00ffb7;
+  --azure: #256ef5;
+  --blue: #3250ed;
+  --purple: #a451fc;
+  --pink: #bd00ff;
+}
+
+/* =====[ 📺 D I S P L A Y S ]=============== */
+flex,vflex,*[flex]{display:flex;}
+grid,*[grid]{display:grid;}
+block,*[block]{display:block;}
+inline,*[inline]{display:inline;}
+*[none],*[hide]{display:none;}
+*[block][inline],block[inline]{display:inline-block !important;}
+*[grid][inline],grid[inline]{display:inline-grid !important;}
+*[flex][inline],flex[inline]{display:inline-flex !important;}
+
+/* =====[ 📐 A L I G N M E N T ]=============== */
+vflex,*[vflex]{flex-direction:column;}
+*[center],*[align="center"]{text-align:center;justify-content:center;align-content:center;align-items:center;flex-wrap:wrap;}
+*[align="left"]{text-align: left;}
+*[align="right"]{text-align: right;}
+*[align="justify"]{text-align:justify;}
+*[maxwidth],*[mwidth]{width:100%;}
+*[maxheight],*[mheight]{height:100%;}
+*[halfwidth],*[hwidth]{width:50%;}
+*[halfheight],*[hheight]{height:50%;}
+*[quartwidth],*[qwidth]{width:25%;}
+*[quartheight],*[qheight]{height:25%;}
+
+/* =====[ 🏷️ C O L O U R S ]=============== */
+*[color="white"],*[colour="white"]{color:white}
+*[color="black"],*[colour="black"]{color:black}
+*[color="red"],*[colour="red"]{color:var(--red)}
+*[color="orange"],*[colour="orange"]{color:var(--orange)}
+*[color="yellow"],*[colour="yellow"]{color:var(--yellow)}
+*[color="green"],*[colour="green"]{color:var(--green)}
+*[color="blue"],*[colour="blue"]{color:var(--blue)}
+*[color="purple"],*[colour="purple"]{color:var(--purple)}
+*[color="pink"],*[colour="pink"]{color:var(--pink)}
