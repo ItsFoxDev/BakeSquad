@@ -1,12 +1,15 @@
 @import url("https://itsfoxdev.github.io/resources/fonts/gilroy/import.css");
 *{font-family:gilroy;transition:all .2s ease;}
-body{background:rgb(24, 24, 24)}
+body{
+  background:rgb(24, 24, 24);
+  padding-top:75px;
+  padding-bottom:25px;
+}
 h1{color:white;}
 #episodes{
   gap:10px;
   max-width:750px;
   margin:auto;
-  margin-top:75px;
 }
 #episodes grid{
   aspect-ratio:6 / 1;
@@ -160,4 +163,57 @@ header > div > div > img{
 }
 #viewer.enabled #viewimg{
   scale:1;
+}
+#loader{
+  transition:all 0.5s ease-out;
+  position:fixed;
+  width:100vw;
+  height:100vh;
+  z-index:100;
+  inset:0px;
+  top:0px;
+  backdrop-filter:blur(10px);
+  background:rgba(0, 0, 0, 0.774);
+  overflow:hidden;
+}
+#loadcontainer{
+  display:block;
+  width:300px;
+  height:10px;
+  border-radius:10px;
+  background:rgba(255,255,255,0.3);
+}
+#loadbar{
+  transition:width .2s ease;
+  display:block;
+  width:0%;
+  height:10px;
+  border-radius:10px;
+  background:white;
+}
+#loadimg{
+  max-width:400px;
+  margin-bottom:25px;
+}
+#headerimg{
+  width:90%;
+  margin:auto;
+  scale:0.85;
+}
+#topbtns{
+  gap:10px;
+}
+#topbtns > button,#topbtns > a{
+  text-decoration: none;
+  background:transparent;
+  color:white;
+  font-size:20px;
+  padding:5px 10px;
+  border-radius:10px;
+  border:2px dashed rgba(255, 255, 255, 0.068);
+  transition:border .2s ease;
+  cursor:pointer;
+}
+#topbtns > button:hover,#topbtns > a:hover{
+  border:2px solid white;
 }

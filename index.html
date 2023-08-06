@@ -6,20 +6,45 @@
     <style media="(min-width: 475px) and (max-width: 600px)">#episodes grid name{font-size:20px;}</style>
     <style media="(max-width: 475px)">#episodes grid name{font-size:15px;}</style>
     <script defer src="scripts.js"></script>
+    <link rel="stylesheet" href="https://itsfoxdev.github.io/fa-turbo/css/all.min.css" />
   </head>
   <body>
     <header flex center>
       <div grid center id="guide">
-        <span center>Episode</span>
+        <img id="headerimg" src="logo.png">
         <div><img src="people/ashley.png">Ashley</div>
         <div><img src="people/christophe.png">Christophe</div>
         <div><img src="people/gonzo.png">Gonzo</div>
         <div><img src="people/mayacamille.png">Maya-Camille</div>
       </div>
     </header>
+    <vflex id="loader" center>
+      <img id="loadimg" src="logo.png">
+      <div id="loadcontainer">
+        <div id="loadbar"></div>
+      </div>
+    </vflex>
+    <script>
+      ic=0;
+      function imgLoaded(){
+        ic++;
+        console.log('✅ Loaded image #'+ic);
+        pbwidth=ic*1.5625;
+        document.getElementById('loadbar').style.width=pbwidth+'%';
+        if (ic == 64){
+          setTimeout(function(){
+            document.getElementById('loader').style.transform="translateY(-100%)";
+          },200)
+        }
+      }
+    </script>
     <div onclick="cv()" id="viewer" center>
       <img onclick="cv()" id="viewimg">
     </div>
+    <flex center id="topbtns">
+      <button onclick="whatIsThis();"><i class="fas fa-block-question"></i> What is this?</button>
+      <a href="https://www.netflix.com/ca/title/81218438" onclick="whatIsThis();"><i class="fas fa-film"></i> Watch on Netflix</a>
+    </flex>
     <vflex mwidth id="episodes">
       <h1 center>Season 1</h1>
       <grid id="brobdaybash">
@@ -28,10 +53,10 @@
           <grad></grad>
           <name>Brother Birthday Bash</name>
         </div>
-        <img onclick="lv(this)" src="episodes/1/brobdaybash/ashley.png">
-        <img onclick="lv(this)" src="episodes/1/brobdaybash/christophe.png">
-        <img onclick="lv(this)" winner src="episodes/1/brobdaybash/gonzo.png">
-        <img onclick="lv(this)" src="episodes/1/brobdaybash/mayacamille.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/1/brobdaybash/ashley.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/1/brobdaybash/christophe.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/1/brobdaybash/gonzo.png" winner>
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/1/brobdaybash/mayacamille.png">
       </grid>
       <!----------->
       <grid id="rnrwedding">
@@ -40,10 +65,10 @@
           <grad></grad>
           <name>Rock-n-roll Wedding</name>
         </div>
-        <img onclick="lv(this)" src="episodes/1/rnrwedding/ashley.png">
-        <img onclick="lv(this)" src="episodes/1/rnrwedding/christophe.png" winner>
-        <img onclick="lv(this)" src="episodes/1/rnrwedding/gonzo.png">
-        <img onclick="lv(this)" src="episodes/1/rnrwedding/mayacamille.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/1/rnrwedding/ashley.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/1/rnrwedding/christophe.png" winner>
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/1/rnrwedding/gonzo.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/1/rnrwedding/mayacamille.png">
       </grid>
       <!----------->
       <grid id="sasfiesta">
@@ -52,10 +77,10 @@
           <grad></grad>
           <name>Sweet and Spicy Fiesta</name>
         </div>
-        <img onclick="lv(this)" src="episodes/1/sasfiesta/ashley.png">
-        <img onclick="lv(this)" src="episodes/1/sasfiesta/christophe.png">
-        <img onclick="lv(this)" src="episodes/1/sasfiesta/gonzo.png" winner>
-        <img onclick="lv(this)" src="episodes/1/sasfiesta/mayacamille.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/1/sasfiesta/ashley.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/1/sasfiesta/christophe.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/1/sasfiesta/gonzo.png" winner>
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/1/sasfiesta/mayacamille.png">
       </grid>
       <!----------->
       <grid id="kickcancer">
@@ -64,10 +89,10 @@
           <grad></grad>
           <name>Kicking Cancer Celebration</name>
         </div>
-        <img onclick="lv(this)" src="episodes/1/kickcancer/ashley.png">
-        <img onclick="lv(this)" src="episodes/1/kickcancer/christophe.png" winner>
-        <img onclick="lv(this)" src="episodes/1/kickcancer/gonzo.png">
-        <img onclick="lv(this)" src="episodes/1/kickcancer/mayacamille.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/1/kickcancer/ashley.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/1/kickcancer/christophe.png" winner>
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/1/kickcancer/gonzo.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/1/kickcancer/mayacamille.png">
       </grid>
       <!----------->
       <grid id="magicwedding">
@@ -76,10 +101,10 @@
           <grad></grad>
           <name>A Magical Wedding (Duos)</name>
         </div>
-        <img onclick="lv(this)" src="episodes/1/magicwedding/ashleygonzo.png" winner>
-        <img onclick="lv(this)" src="episodes/1/magicwedding/christophemaya.png">
-        <img onclick="lv(this)" src="episodes/1/magicwedding/ashleygonzo.png" winner>
-        <img onclick="lv(this)" src="episodes/1/magicwedding/christophemaya.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/1/magicwedding/ashleygonzo.png" winner>
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/1/magicwedding/christophemaya.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/1/magicwedding/ashleygonzo.png" winner>
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/1/magicwedding/christophemaya.png">
       </grid>
       <!----------->
       <grid id="magicwedding">
@@ -88,10 +113,10 @@
           <grad></grad>
           <name>Supersize Smash Cake</name>
         </div>
-        <img onclick="lv(this)" src="episodes/1/smashcake/ashley.png">
-        <img onclick="lv(this)" src="episodes/1/smashcake/christophe.png" winner>
-        <img onclick="lv(this)" src="episodes/1/smashcake/gonzo.png">
-        <img onclick="lv(this)" src="episodes/1/smashcake/mayacamille.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/1/smashcake/ashley.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/1/smashcake/christophe.png" winner>
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/1/smashcake/gonzo.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/1/smashcake/mayacamille.png">
       </grid>
       <!----------->
       <grid id="sweet16">
@@ -100,10 +125,10 @@
           <grad></grad>
           <name>Super Sweet 16</name>
         </div>
-        <img onclick="lv(this)" src="episodes/1/sweet16/ashley.png">
-        <img onclick="lv(this)" src="episodes/1/sweet16/christophe.png">
-        <img onclick="lv(this)" src="episodes/1/sweet16/gonzo.png">
-        <img onclick="lv(this)" src="episodes/1/sweet16/mayacamille.png" winner>
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/1/sweet16/ashley.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/1/sweet16/christophe.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/1/sweet16/gonzo.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/1/sweet16/mayacamille.png" winner>
       </grid>
       <!----------->
       <grid id="sweet16">
@@ -112,23 +137,108 @@
           <grad></grad>
           <name>For the love of cake</name>
         </div>
-        <img onclick="lv(this)" src="episodes/1/loveofcake/ashley.png" winner>
-        <img onclick="lv(this)" src="episodes/1/loveofcake/christophe.png">
-        <img onclick="lv(this)" src="episodes/1/loveofcake/gonzo.png">
-        <img onclick="lv(this)" src="episodes/1/loveofcake/mayacamille.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/1/loveofcake/ashley.png" winner>
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/1/loveofcake/christophe.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/1/loveofcake/gonzo.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/1/loveofcake/mayacamille.png">
       </grid>
       <!----------->
       <h1 center>Season 2</h1>
+      <!----------->
       <grid id="barmitzvah">
         <div>
           <img cover src="episodes/2/barmitzvah/cover.png">
           <grad></grad>
           <name>Bar Mitzvah</name>
         </div>
-        <img onclick="lv(this)" src="episodes/2/barmitzvah/ashley.png">
-        <img onclick="lv(this)" src="episodes/2/barmitzvah/christophe.png">
-        <img onclick="lv(this)" src="episodes/2/barmitzvah/gonzo.png">
-        <img onclick="lv(this)" src="episodes/2/barmitzvah/mayacamille.png" winner>
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/2/barmitzvah/ashley.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/2/barmitzvah/christophe.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/2/barmitzvah/gonzo.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/2/barmitzvah/mayacamille.png" winner>
+      </grid>
+      <!----------->
+      <grid id="surprisebaby">
+        <div>
+          <img cover src="episodes/2/surprisebaby/cover.jpg">
+          <grad></grad>
+          <name>Surprise Baby Announcement</name>
+        </div>
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/2/surprisebaby/ashley.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/2/surprisebaby/christophe.png" winner>
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/2/surprisebaby/gonzo.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/2/surprisebaby/mayacamille.png">
+      </grid>
+      <!----------->
+      <grid id="vowrenewal">
+        <div>
+          <img cover src="episodes/2/vowrenewal/cover.jpg">
+          <grad></grad>
+          <name>Vow Renewal</name>
+        </div>
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/2/vowrenewal/ashley.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/2/vowrenewal/christophe.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/2/vowrenewal/gonzo.png" winner>
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/2/vowrenewal/mayacamille.png">
+      </grid>
+      <!----------->
+      <grid id="volunteer">
+        <div>
+          <img cover src="episodes/2/80svolunteer/cover.jpg">
+          <grad></grad>
+          <name>80s Volunteer Appreciation Party</name>
+        </div>
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/2/80svolunteer/ashley.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/2/80svolunteer/christophe.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/2/80svolunteer/gonzo.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/2/80svolunteer/mayacamille.png" winner>
+      </grid>
+      <!----------->
+      <grid id="double75">
+        <div>
+          <img cover src="episodes/2/double75/cover.jpg">
+          <grad></grad>
+          <name>Double 75th Birthday</name>
+        </div>
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/2/double75/ashley.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/2/double75/christophe.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/2/double75/gonzo.png" winner>
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/2/double75/mayacamille.png" >
+      </grid>
+      <!----------->
+      <grid id="gayleague">
+        <div>
+          <img cover src="episodes/2/gayleague/cover.jpg">
+          <grad></grad>
+          <name>Varsity Gay League (Duos)</name>
+        </div>
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/2/gayleague/ashleymaya.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/2/gayleague/christophegonzo.png" winner>
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/2/gayleague/christophegonzo.png" winner>
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/2/gayleague/ashleymaya.png">
+      </grid>
+      <!----------->
+      <grid id="multicultural">
+        <div>
+          <img cover src="episodes/2/multicultural/cover.jpg">
+          <grad></grad>
+          <name>Multicultural wedding</name>
+        </div>
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/2/multicultural/ashley.png" winner>
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/2/multicultural/christophe.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/2/multicultural/gonzo.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/2/multicultural/mayacamille.png">
+      </grid>
+      <!----------->
+      <grid id="bringtheheat">
+        <div>
+          <img cover src="episodes/2/bringtheheat/cover.jpg">
+          <grad></grad>
+          <name>Bring on the heat!</name>
+        </div>
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/2/bringtheheat/ashley.png" winner>
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/2/bringtheheat/christophe.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/2/bringtheheat/gonzo.png">
+        <img onclick="lv(this)" onload="imgLoaded();" src="episodes/2/bringtheheat/mayacamille.png">
       </grid>
     </vflex>
   </body>
