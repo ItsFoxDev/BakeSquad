@@ -1,5 +1,7 @@
 @import url("https://itsfoxdev.github.io/resources/fonts/gilroy/import.css");
 *{font-family:gilroy;transition:all .2s ease;}
+body{background:rgb(24, 24, 24)}
+h1{color:white;}
 #episodes{
   gap:10px;
   max-width:750px;
@@ -65,6 +67,7 @@
 #episodes grid img[winner]{
   border:2px solid var(--yellow);
   box-shadow:0px 0px 15px 5px #ffd500a1 !important;
+  z-index:5;
 }
 #episodes grid img:hover{
   scale:1.2;
@@ -131,7 +134,7 @@ header > div > div > img{
 #viewer{
   width:100vw;
   height:100vh;
-  background:rgba(0,0,0,0.4);
+  background:rgba(0,0,0,0.6);
   position:fixed;
   inset:0px;
   z-index:200;
@@ -152,6 +155,8 @@ header > div > div > img{
   scale:0;
   border-radius:10px;
   cursor:pointer;
+  user-select:none;
+  -webkit-user-drag: none;
 }
 #viewer.enabled #viewimg{
   scale:1;
