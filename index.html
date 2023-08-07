@@ -3,10 +3,15 @@
   <head>
     <link rel="stylesheet" href="library.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.png">
+    <title>Bake Squad Index</title>
     <style media="(min-width: 475px) and (max-width: 600px)">#episodes grid name{font-size:20px;}</style>
     <style media="(max-width: 475px)">#episodes grid name{font-size:15px;}</style>
     <script defer src="scripts.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="https://itsfoxdev.github.io/fa-turbo/css/all.min.css" />
+    <link rel="stylesheet" href="https://itsfoxdev.github.io/lib/scrollbar.css" />
   </head>
   <body>
     <header flex center>
@@ -42,9 +47,18 @@
       <img onclick="cv()" id="viewimg">
     </div>
     <flex center id="topbtns">
-      <button onclick="whatIsThis();"><i class="fas fa-block-question"></i> What is this?</button>
+      <button onclick="document.getElementById('whatisthis').classList.add('active');"><i class="fas fa-block-question"></i> What is this?</button>
       <a href="https://www.netflix.com/ca/title/81218438" onclick="whatIsThis();"><i class="fas fa-film"></i> Watch on Netflix</a>
     </flex>
+    <div id="whatisthis" flex center onclick="this.classList.remove('active');">
+      <vflex id="witwindow">
+        <img src="banner.webp">
+        <h1>What is this website?</h1>
+        <p>This website is a gallery of all of the creations made by the different bakers on Bake Squad. Images are captured directly from the show, although impainting has occasionally been used to remove the show's labels showing the name of the creation.</p>
+        <h1>Why did I make this?</h1>
+        <p>I was bored :/</p>
+      </vflex>
+    </div>
     <vflex mwidth id="episodes">
       <h1 center>Season 1</h1>
       <grid id="brobdaybash">

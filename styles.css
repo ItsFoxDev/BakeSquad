@@ -5,7 +5,7 @@ body{
   padding-top:75px;
   padding-bottom:25px;
 }
-h1{color:white;}
+*{color:white;}
 #episodes{
   gap:10px;
   max-width:750px;
@@ -216,4 +216,41 @@ header > div > div > img{
 }
 #topbtns > button:hover,#topbtns > a:hover{
   border:2px solid white;
+}
+#whatisthis{
+  position:fixed;
+  inset:0px;
+  width:100vw;
+  height:100vh;
+  background:rgba(0,0,0,0.6);
+  z-index:100;
+  opacity:0;
+  pointer-events:none;
+  cursor:pointer;
+}
+#whatisthis.active{
+  opacity:1;
+  pointer-events:all;
+}
+#witwindow{
+  background:rgb(15, 15, 15);
+  padding:10px;
+  border-radius:5px;
+  max-width:calc(100vw - 100px);
+  max-height:calc(100vh - 100px);
+  overflow:overlay;
+  scale:0;
+}
+#whatisthis.active #witwindow{
+  scale:1;
+}
+#witwindow *{
+  max-width:500px;
+}
+#witwindow h1{
+  margin:10px;
+  margin-bottom:-5px;
+}
+#witwindow img{
+  border-radius:5px;
 }
